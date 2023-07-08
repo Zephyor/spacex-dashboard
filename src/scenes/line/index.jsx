@@ -29,13 +29,11 @@ const Line = () => {
   const { data } = useData();
 
   if (!data) return <div></div>;
-
-  console.log(data);
   return (
     <Box m="20px">
       <Header title="Line Chart" subtitle="Simple Line Chart" />
       <Box height="75vh">
-        <LineChart />
+        <LineChart data={[data]} />
       </Box>
     </Box>
   );
