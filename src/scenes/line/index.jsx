@@ -1,17 +1,17 @@
-import { Box } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 import Header from '../../components/Header';
 import LineChart from '../../components/LineChart';
 import { useEffect, useState } from 'react';
-import { GetPastLaunches } from '../../services/apiclient';
+import { getPastLaunches } from '../../services/apiclient';
 import { parseLaunch } from '../../helpers/launch.helper';
 import { tokens } from '../../theme';
 
-export const useData = () => {
+export const useLineData = () => {
   const [state, setState] = useState();
 
   useEffect(() => {
     async function fetchData() {
-      const response = await GetPastLaunches();
+      const response = await getPastLaunches();
       const dataResult = parseLaunch(response);
 
       setState({
@@ -26,12 +26,12 @@ export const useData = () => {
 };
 
 const Line = () => {
-  const { data } = useData();
+  const { data } = useLineData();
 
-  if (!data) return <div></div>;
+  if (!data) return <CircularProgress />;
   return (
     <Box m="20px">
-      <Header title="Line Chart" subtitle="Simple Line Chart" />
+      <Header title="Rocket Launches" subtitle="Annual Rocket Launches" />
       <Box height="75vh">
         <LineChart data={[data]} />
       </Box>

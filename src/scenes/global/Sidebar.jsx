@@ -9,6 +9,9 @@ import HomeModeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import RocketIcon from '@mui/icons-material/Rocket';
+import FlightLandIcon from '@mui/icons-material/FlightLand';
+import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -122,9 +125,23 @@ const Sidebar = () => {
               Data
             </Typography>
             <Item
-              title="Test"
-              to="/"
-              icon={<HomeModeOutlinedIcon />}
+              title="Rocket list"
+              to="/rockets"
+              icon={<RocketIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Launchpad list"
+              to="/launchpads"
+              icon={<FlightTakeoffIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Landpad list"
+              to="/landpads"
+              icon={<FlightLandIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -136,7 +153,7 @@ const Sidebar = () => {
               Charts
             </Typography>
             <Item
-              title="Geography Chart"
+              title="Pads Position"
               to="/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}
@@ -144,7 +161,7 @@ const Sidebar = () => {
             />
 
             <Item
-              title="Line Chart"
+              title="Rocket Launches"
               to="/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}

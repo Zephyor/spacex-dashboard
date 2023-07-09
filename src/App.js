@@ -4,17 +4,14 @@ import { Routes, Route } from 'react-router-dom';
 import Topbar from './scenes/global/Topbar';
 import Dashboard from './scenes/dashboard';
 import Sidebar from './scenes/global/Sidebar';
-// import Line from './scenes/line';
-// import Pie from './scenes/pie';
-// import Geography from './scenes/geography';
-import LineChart from './components/LineChart';
+import Geography from './scenes/geography';
 import Line from './scenes/line';
-// import Bar from './scenes/bar';
+import Rockets from './scenes/rockets';
+import Launchpads from './scenes/launchpads';
+import Landpads from './scenes/landpads';
 
 function App() {
   const [theme, colorMode] = useMode();
-
-
 
   return (
     <ColorModeContext.Provider value={colorMode}>
@@ -26,10 +23,11 @@ function App() {
             <Topbar />
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              {/* <Route path="/bar" element={<Bar />} /> */}
-              {/* <Route path="/pie" element={<Pie />} /> */}
+              <Route path="/rockets" element={<Rockets />} />
+              <Route path="/launchpads" element={<Launchpads />} />
+              <Route path="/landpads" element={<Landpads />} />
               <Route path="/line" element={<Line />} />
-              {/* <Route path="/geography" element={<Geography />} /> */}
+              <Route path="/geography" element={<Geography />} />
             </Routes>
           </main>
         </div>

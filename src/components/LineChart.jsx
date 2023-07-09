@@ -5,8 +5,8 @@ import { mockLineData as mockData } from '../data/mockData';
 
 const LineChart = ({
   isCustomLineColors = false,
-  isDashboard = false,
   data = mockData,
+  isDashboard = false,
 }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
