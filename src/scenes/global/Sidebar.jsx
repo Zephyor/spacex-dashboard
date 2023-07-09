@@ -51,13 +51,12 @@ const Sidebar = () => {
           color: '#868dfb !important',
         },
         '& .pro-menu-item.active': {
-          color: '#6870fa :important',
+          color: '#6870fa !important',
         },
       }}
     >
       <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
-          {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
