@@ -12,7 +12,6 @@ export const useLandPadData = () => {
   useEffect(() => {
     async function fetchData() {
       const landpadResponse = await getLandPadList();
-      console.log(await parseLandpadList(landpadResponse));
       const parsedLandPadList = await parseLandpadList(landpadResponse);
       setLandpadList(parsedLandPadList);
     }
